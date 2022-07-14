@@ -13,11 +13,9 @@ public class MyTest
         Assert.IsTrue(true);
     }
 
-    /*
     [Test]
     public void Failtest()
     {
         Assert.IsTrue(false);
     }
-    */
 }
