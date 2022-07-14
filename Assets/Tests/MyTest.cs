@@ -13,6 +13,12 @@ public class MyTest
         Assert.IsTrue(true);
     }
 
+    [Test]
+    public void SuccessTest2()
+    {
+        Assert.IsTrue(true);
+    }
+
     /*
     [Test]
     public void Failtest()
