@@ -3,8 +3,7 @@ name: Test Runner
 on: 
     workflow_dispatch:
     pull_request:
-        types:
-        - opened
+        types: [opened, reopened]
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
