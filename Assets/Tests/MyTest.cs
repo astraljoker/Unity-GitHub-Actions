@@ -14,16 +14,8 @@ public class MyTest
     }
 
     [Test]
-    public void SuccessTest2()
-    {
-        Assert.IsTrue(true);
-    }
-
-    /*
-    [Test]
     public void Failtest()
     {
         Assert.IsTrue(false);
     }
-    */
 }
