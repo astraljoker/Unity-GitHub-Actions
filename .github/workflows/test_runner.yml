@@ -1,6 +1,10 @@
 name: Test Runner
 
-on: [workflow_dispatch]
+on: 
+    workflow_dispatch:
+    pull_request:
+        types:
+        - opened
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
