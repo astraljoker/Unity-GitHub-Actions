@@ -1,0 +1,34 @@
+name: Package
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-pacakge:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1.1.0
+        with:
+          path: UnityProject/Library
+          key: Library
+      - name: Generate package
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: StandaloneLinux64
+          buildMethod: PackageGenerationTools.GeneratePackage
+      - name: Upload Unity package
+        uses: actions/upload-artifact@v2
+        with:
+          name: Unity Package
+          path: Build/*.unitypackage
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: Build/*.unitypackage
