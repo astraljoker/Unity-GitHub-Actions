@@ -26,7 +26,7 @@ public static class PackageGenerationTools
     private static string GetPackagePath(string title)
     {
         return Path.Combine(
-            Path.GetDirectoryName(Directory.GetCurrentDirectory()), "Build",
+            Path.GetDirectoryName(Directory.GetCurrentDirectory()), "build",
             $"{title}.{PlayerSettings.bundleVersion}.unitypackage");
     }
 }
