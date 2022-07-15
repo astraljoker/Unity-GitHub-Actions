@@ -19,6 +19,7 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
+          buildsPath: Build
           targetPlatform: StandaloneLinux64
           buildMethod: PackageGenerationTools.GeneratePackage
       - name: Upload Unity package
