@@ -10,7 +10,11 @@ public static class PackageGenerationTools
     {
         var githubRef = Environment.GetEnvironmentVariable("GITHUB_REF");
 
-        Debug.Log($"githubRef = {githubRef}");
+        if (githubRef != null)
+            PlayerSettings.bundleVersion = githubRef.Substring(11);
+
+        Debug.Log($"githubRef : {githubRef}");
+        Debug.Log($"bundleVersion : {PlayerSettings.bundleVersion}");
 
         AssetDatabase.ExportPackage(new string[] {
                 "Assets/Audio"
