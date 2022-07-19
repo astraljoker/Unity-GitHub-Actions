@@ -1,0 +1,27 @@
+on:
+  workflow_call:
+    inputs:
+      testMode:
+        required: true
+        type: string
+      checkName:
+        required: true
+        type: string
+  
+jobs:
+  testRunner:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        testMode:
+          - EditMode
+          - PlayMode
+    steps:
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v2
+        id: testRunner
+        with:
+          testMode: ${{ input.testMode }}
+          checkName: ${{ input.testMode }} test results
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
