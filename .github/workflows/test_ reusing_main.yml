@@ -48,7 +48,7 @@ jobs:
         id: testRunner
         with:
           testMode: ${{ matrix.testMode }}
-          checkName: ${{ matrix.testMode }} test results
+          checkName: ${{ matrix.checkName }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v2
