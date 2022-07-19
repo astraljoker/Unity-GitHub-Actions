@@ -42,8 +42,8 @@ jobs:
           restore-keys: |
             Library-test-project-
             Library-
-      - name: Run tests
-        uses: ./test
+      - uses: astraljoker/Unity-GitHub-Actions/.github/workflows/test_reusing_func.yml@main
+        name: Run tests
         id: testRunner
         with:
           testMode: ${{ matrix.testMode }}
