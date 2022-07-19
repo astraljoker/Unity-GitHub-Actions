@@ -43,7 +43,7 @@ jobs:
             Library-test-project-
             Library-
       - name: Run tests
-        uses: astraljoker/Unity-GitHub-Actions/.github/workflows/test_reusing_main.yml@main
+        uses: astraljoker/Unity-GitHub-Actions/.github/workflows/test_reusing_func.yml@main
         id: testRunner
         with:
           testMode: ${{ matrix.testMode }}
