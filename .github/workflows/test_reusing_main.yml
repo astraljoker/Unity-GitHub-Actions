@@ -43,7 +43,7 @@ jobs:
             Library-test-project-
             Library-
       - name: Run tests
-        uses: ./.github/workflows/test_reusing_func
+        uses: ./../.github/workflows/test_reusing_func
         id: testRunner
         with:
           testMode: ${{ matrix.testMode }}
