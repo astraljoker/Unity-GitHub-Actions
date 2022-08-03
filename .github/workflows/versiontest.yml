@@ -20,7 +20,6 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: Android
-          projectPath: ./Adam/
       - uses: actions/upload-artifact@v2
         with:
           name: build-Android
